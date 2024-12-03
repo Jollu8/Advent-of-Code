@@ -1,20 +1,18 @@
 //
 // Created by Jollu Emil on 12/1/24.
 //
-#include "templates.h"
+#pragma once
+
+#include "base.h"
 
 #include <fstream>
 #include <string>
 #include <map>
 #include <set>
 
-
-#pragma once
-
-class Day01 : public Templ {
+class Day01 : public Base {
 public:
-    Day01(std::string fileName): Templ(std::move(fileName)) {}
-    bool readFile() override;
+    Day01(std::string fileName) : Base(std::move(fileName)) {}
 
     int part_1() override;
 
@@ -22,7 +20,4 @@ public:
 
     std::pair<int, int> day_01();
 
-private:
-    std::map<int, int> mp;
-    std::multiset<int> a, c;
 };
