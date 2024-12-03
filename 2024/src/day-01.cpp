@@ -2,7 +2,6 @@
 // Created by Jollu Emil on 12/1/24.
 //
 
-#include "templates.h"
 #include "2024/day-01.h"
 
 #include <iostream>
@@ -11,9 +10,19 @@
 #include <numeric>
 #include <sstream>
 
+std::map<int, int> mp;
+std::multiset<int> a, c;
 
 std::pair<int, int> Day01::day_01() {
-    if (!readFile()) return {};
+    for (auto &str: m_buff) {
+        std::stringstream ss(str);
+        int x, y;
+        ss >> x >> y;
+        a.insert(x);
+        c.insert(y);
+        mp[y]++;
+    }
+
     int res1 = part_1();
     int res2 = part_2();
     return {res1, res2};
@@ -36,27 +45,3 @@ int Day01::part_2() {
     });
 }
 
-bool Day01::readFile() {
-
-    if (!m_fileName.is_open()) {
-        std::cerr << "Cannot open file " << m_fileName.rdbuf() << std::endl;
-        return false;
-    }
-    std::string line;
-    try {
-        while (std::getline(m_fileName, line)) {
-            std::istringstream iss(line);
-            int x, y;
-            if (iss >> x >> y) {
-                a.insert(x);
-                c.insert(y);
-                mp[y]++;
-            }
-        }
-    } catch (const std::exception &e) {
-        std::cerr << "Exception while reading from file " << m_fileName.rdbuf() << ": " << e.what() << std::endl;
-        return false;
-    }
-
-    return true;
-}

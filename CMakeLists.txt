@@ -10,18 +10,24 @@ set(CMAKE_CXX_STANDARD 23)
 
 
 set(HDRS
-        ${CMAKE_SOURCE_DIR}/templ/templates.h
+        ${CMAKE_SOURCE_DIR}/base/common.h
+        ${CMAKE_SOURCE_DIR}/base/base.h
         ${INCLUDE_2024}/day-01.h
+        ${INCLUDE_2024}/day-02.h
+        ${INCLUDE_2024}/day-03.h
 )
 
 
 set(SRC
+        ${CMAKE_SOURCE_DIR}/base/base.cpp
         ${DIR_2024}/src/day-01.cpp
+        ${DIR_2024}/src/day-02.cpp
+        ${DIR_2024}/src/day-03.cpp
 )
 
 include_directories(${unit_name}
         ${CMAKE_SOURCE_DIR}/"2024"
-        templ
+        base
         "${DIR_2024}/include"
 )
 
