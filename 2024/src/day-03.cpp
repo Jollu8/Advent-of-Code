@@ -4,11 +4,7 @@
 
 #include "2024/day-03.h"
 
-#include <iostream>
-#include <fstream>
-#include <sstream>
 #include <string>
-#include <vector>
 #include <regex>
 
 int Day03::part_1() {
@@ -16,7 +12,6 @@ int Day03::part_1() {
     std::regex mulRegex(R"(mul\((\d+),(\d+)\))");
     auto buff = m_buff;
     for (auto &line: buff) {
-        std::regex mulRegex(R"(mul\((\d+),(\d+)\))");
         std::smatch match;
 
         while (std::regex_search(line, match, mulRegex)) {
@@ -36,15 +31,12 @@ int Day03::part_2() {
 
         while (std::regex_search(line, match, actionRegex)) {
 
-            if (match[1] == "mul" && action) {
-                cnt += std::stoi(match[2]) * std::stoi(match[3]);
-            }
-            if (match.str() == "do()") {
-                action = true;
-            }
-            if (match.str() == "don't()") {
-                action = false;
-            }
+            if (match[1] == "mul" && action) cnt += std::stoi(match[2]) * std::stoi(match[3]);
+
+            if (match.str() == "do()") action = true;
+
+            if (match.str() == "don't()") action = false;
+
             line = match.suffix().str();
         }
     }

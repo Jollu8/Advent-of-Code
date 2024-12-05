@@ -9,8 +9,6 @@
 #include <iostream>
 #include <sstream>
 
-const std::string PATH = "../";
-const std::string Y_PATH = PATH + "2024/data/";
 
 void test_f1_weak();
 
@@ -35,5 +33,15 @@ void test_f1_weak() {
     auto res_day_03 = dynamic_cast<Day03 *>(day_03)->day_03();
     assert(res_day_03.first == 175615763 && res_day_03.second == 74361272);
     std::cout << "TEST_2024_03 OK!\n";
+////////////////////
+    Base *day_04 = new Day04{Y_PATH + "day-04.txt"};
+    auto res_day_04 = dynamic_cast<Day04 *>(day_04)->day_04();
+    assert(res_day_04.first == 571 && res_day_04.second == 2029);
+    std::cout << "TEST_2024_04 OK!\n";
+////////////////////
+    Base *day_05 = new Day05{Y_PATH + "day-05.txt"};
+    auto res_day_05 = dynamic_cast<Day05 *>(day_05)->day_05();
+    assert(res_day_05.first == 4959 && res_day_05.second == 4655);
+    std::cout << "TEST_2024_05 OK!\n";
 
 }

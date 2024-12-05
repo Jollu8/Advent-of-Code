@@ -5,11 +5,6 @@
 
 #include "base.h"
 
-#include <fstream>
-#include <string>
-#include <map>
-#include <set>
-
 class Day01 : public Base {
 public:
     Day01(std::string fileName) : Base(std::move(fileName)) {}

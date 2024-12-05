@@ -15,6 +15,8 @@ set(HDRS
         ${INCLUDE_2024}/day-01.h
         ${INCLUDE_2024}/day-02.h
         ${INCLUDE_2024}/day-03.h
+        ${INCLUDE_2024}/day-04.h
+        ${INCLUDE_2024}/day-05.h
 )
 
 
@@ -23,6 +25,8 @@ set(SRC
         ${DIR_2024}/src/day-01.cpp
         ${DIR_2024}/src/day-02.cpp
         ${DIR_2024}/src/day-03.cpp
+        ${DIR_2024}/src/day-04.cpp
+        ${DIR_2024}/src/day-05.cpp
 )
 
 include_directories(${unit_name}

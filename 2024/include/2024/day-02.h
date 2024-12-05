@@ -4,10 +4,6 @@
 #pragma once
 #include "base.h"
 
-#include <fstream>
-#include <string>
-#include <vector>
-
 class Day02 : public Base {
 public:
     Day02(std::string fileName): Base(std::move(fileName)) {}
